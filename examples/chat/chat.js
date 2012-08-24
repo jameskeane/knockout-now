@@ -34,11 +34,11 @@ everyone.now.upTime = 0;
 
 // every 10 seconds poll for the memory.
 setInterval(function () {
-  //everyone.now.memoryUsage = process.memoryUsage().rss;
+  everyone.now.memoryUsage = process.memoryUsage().rss;
 }, 10*1000);
 // every second update uptime, this is unneccessary but good for demostration
 setInterval(function() {
-	//everyone.now.upTime += 1;
+	everyone.now.upTime += 1;
 }, 1000);
 
 // User requests to join the chat room
