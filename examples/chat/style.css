@@ -25,6 +25,7 @@ table {
 
 a { text-decoration: none; color: #888; }
 a:hover { text-decoration: underline; color: #aaa; }
+#inuse { display: none; }
 
 #loading, #connect {
   background: #22252a;
@@ -69,7 +70,22 @@ a:hover { text-decoration: underline; color: #aaa; }
   padding-bottom: 5.1em; 
   background: inherit;
   overflow: hidden;
+  float: left;
 }
+
+#users { float:right; width: 200px; border-left: 20px #733 solid; height: 100%;}
+#users > select {
+  background: #22252a;
+  color: #cd5;
+  border: none;
+  font-size: 14pt;
+  width: 100%;
+}
+#users > select:focus {
+  border: none;
+  outline: none;
+}
+
 
 /* not very important info */
 .notice td, .join td, .part td, .message .date { color: #555; }
