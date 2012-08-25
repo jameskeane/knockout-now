@@ -9,26 +9,40 @@
   ko.observable.fn.now = function(name) {
     var sub = this,
         cb = function() {},
-        ns = 'now.'+name,
-        re = new RegExp('^'+ns),
-        update = function(data) {
-            for(var k in data) {
-                if(re.test(k)) {
-                    sub(now[name]);
-                    break;
-                }
-            }
-        };
+        ns = 'now.'+name;
 
-    // Bind the update function to the appropriate events (update, delete)
-    now.core.on('rv', update);
-    now.core.on('del', update);
+    // Check if we have an observable array, we need to handle it differently
+    if(this.__ko_now_isObservableArray) {
+      var re = new RegExp(ns+'.\\d+');
 
+      // Make sure we handle the delete request
+      now.core.on('del', function(va) {
+        if(re.test(va) && now[name] !== undefined) {
+          sub(now[name]);
+        }
+      });
+
+      // now.js sends array updates as 'now.array.%index', so
+      // we have to song and dance this
+      now.core.on('rv', function(data) {
+        for(var k in data) {
+          if(re.test(k)) {
+            sub(now[name]);
+            break;
+          }
+        }
+      });
+    } else {
+      // simple update, key -> value
+      now.core.on('rv', function(data) {
+        if(data[ns] !== undefined ) sub(data[ns]);
+      });
+    }
+    
     // Initialize the data, nowjs will query the server
     now.ready(function() {
       if(now[name] !== undefined) sub(now[name]);
     });
-
     // Always return the observable
     return sub;
   }
