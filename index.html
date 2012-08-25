@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Knockout-now by jameskeane</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/jameskeane/knockout-now">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/jameskeane/knockout-now/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/jameskeane/knockout-now/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Knockout-now</h1>
+          <p>A mashup of Knockout.js and Now.js</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/jameskeane">jameskeane</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>Knockout-Now</h3>
+
+<h2>What?</h2>
+
+<p>Knockout-Now is a plugin for <a href="http://knockoutjs.com/">Knockout.js</a> that adds automatic synchronization between client views and server variables using <a href="http://nowjs.com/">Now.js</a>.  It is amazingly amazing, and awesomely awesome.</p>
+
+<h2>Usage:</h2>
+
+<p>In your Knockout ViewModel:</p>
+
+<div class="highlight"><pre><span class="k">this</span><span class="p">.</span><span class="nx">clicks</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">().</span><span class="nx">now</span><span class="p">(</span><span class="s1">'clicks'</span><span class="p">);</span>
+</pre></div>
+
+<p>and that's it ... <strong>really</strong>!  Now your data-bound views will automagically update; whenever <code>now.clicks</code> is changed from the server.
+i.e.</p>
+
+<div class="highlight"><pre><span class="nx">everyone</span><span class="p">.</span><span class="nx">now</span><span class="p">.</span><span class="nx">clicks</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+
+<h2>Is it any good?</h2>
+
+<p>Yes!</p>
+
+<h2>Notes:</h2>
+
+<p>Due to a bug, in the <em>last</em> release of Now.js (0.8.1).  You must use my branch, this can be done by adding a dependency to your package.json file like this:</p>
+
+<div class="highlight"><pre><span class="s2">"now"</span><span class="o">:</span> <span class="s2">"git://github.com/jameskeane/now.git"</span><span class="p">,</span>
+</pre></div>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
