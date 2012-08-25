@@ -3,7 +3,7 @@ Knockout-Now
 
 What?
 ----------
-Knockout-Now is a plugin for [Knockout.js](http://knockoutjs.com/) that adds automatic synchronization between client views and server variables using (Now.js)[http://nowjs.com/].  It is amazingly amazing, and awesomely awesome.
+Knockout-Now is a plugin for [Knockout.js](http://knockoutjs.com/) that adds automatic synchronization between client views and server variables using [Now.js](http://nowjs.com/).  It is amazingly amazing, and awesomely awesome.
 
 Usage:
 ----------
