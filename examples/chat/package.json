@@ -14,5 +14,9 @@
     "node-markdown": "0.1.1",
     "mime": "1.2.7",
     "sanitizer": "0.0.15"
+  },
+  "engines": {
+    "node": "0.8.7",
+    "npm": "1.1.49"
   }
 }

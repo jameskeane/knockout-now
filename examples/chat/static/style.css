@@ -74,14 +74,16 @@ a:hover { text-decoration: underline; color: #aaa; }
 }
 
 #users { float:right; width: 200px; border-left: 20px #733 solid; height: 100%;}
-#users > select {
+#users > ul {
   background: #22252a;
   color: #cd5;
   border: none;
   font-size: 14pt;
   width: 100%;
+  overflow: auto;
 }
-#users > select:focus {
+#users li {
+  list-style-type:none; 
   border: none;
   outline: none;
 }

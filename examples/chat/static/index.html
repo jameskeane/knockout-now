@@ -4,8 +4,7 @@
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/knockout/2.1.0/knockout-min.js"></script>
     <script type="text/javascript" src="/nowjs/now.js"></script>
-    <script type="text/javascript" src="/ko.now.js"
-    <script type="text/javascript" src="/client.js" ></script>
+    <script type="text/javascript" src="http://jameskeane.github.com/knockout-now/ko.now.js"></script>
     <title>knockout-now chat</title>
     <script>
         $(function() {
@@ -47,7 +46,7 @@
           <fieldset> 
             <p>
               This is a chat room. It uses Knockout.js and Now.js, with the
-              knockout-now plugin. You can gind the source code here.
+              knockout-now plugin. You can gind the source code
               <a href="http://github.com/jameskeane/knockout-now/tree/master">here</a>.
             </p>
 
@@ -68,12 +67,13 @@
         </table>
       </div>
       <div id="users">
-        <select multiple='multiple' data-bind="options: users"></select>
+        <ul data-bind="foreach: users">
+          <li data-bind="text: $data"></li>
+        </ul>
       </div>
       <div id="toolbar">
         <ul id="status">
           <li><a id="usersLink" href="#"><span data-bind="text: users().length">?</span> users</a></li>
-          <li>uptime: <span id="uptime" data-bind="text: upTime">?</span> seconds</li>
           <li>memory: <span id="rss" data-bind="text: memoryUsage">?</span>mb RSS</li>
         </ul>
         <form data-bind="submit: sendMessage">
