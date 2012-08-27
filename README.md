@@ -18,8 +18,13 @@ everyone.now.clicks += 1;
 ```
 
 Is it any good?
----------------------
+---------------
 Yes!
+
+Prove it!
+---------
+Okie Dokie, check it out:
+ * [Chat Example](http://calm-hollows-8884.herokuapp.com/)
 
 Notes:
 ---------
