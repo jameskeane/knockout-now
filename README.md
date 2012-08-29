@@ -24,7 +24,7 @@ Yes!
 Prove it!
 ---------
 Okie Dokie, check it out:
- * [Chat Example](http://calm-hollows-8884.herokuapp.com/)
+ * [Chat Example](http://konowchat.jit.su/)
 
 Notes:
 ---------
