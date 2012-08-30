@@ -10,6 +10,11 @@
     var sub = this,
         cb = function() {},
         ns = 'now.'+name;
+    
+    // Subscribe to changes
+    sub.subscribe(function(val) {
+        if(now[name] != val) now[name] = val;
+    });
 
     // Check if we have an observable array, we need to handle it differently
     if(this.__ko_now_isObservableArray) {
@@ -47,3 +52,4 @@
     return sub;
   }
 })();
+
