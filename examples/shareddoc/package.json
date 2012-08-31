@@ -1,0 +1,20 @@
+{
+  "name": "shareddoc",
+  "version": "0.0.1",
+  "description": "A primitive pair programming application",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server.js"
+  },
+  "analyze": false,
+  "author": "James Keane",
+  "license": "MIT",
+  "dependencies": {
+    "express": "3.0.0rc3",
+    "now": "git://github.com/jameskeane/now.git#sockjs"
+  },
+  "engines": {
+    "node": "0.8.x"
+  },
+  "subdomain": "shareddoc"
+}

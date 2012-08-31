@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/style.css" type="text/css"/>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/knockout/2.1.0/knockout-min.js"></script>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.2/styles/monokai.min.css">
+    <script src="http://yandex.st/highlightjs/7.2/highlight.min.js"></script>
+    <script type="text/javascript" src="/nowjs/now.js"></script>
+    <script type="text/javascript" src="/ko.now.js"></script>
+    <title>Shared Editor</title>
+    <script>
+        $(function() {
+            var EditorModel = function() {
+                this.pad = ko.observable().now('pad');
+        
+                this.pad.subscribe(function(code) {
+                    var result = $('pre code#result');
+                    result.html(code);
+                    result.removeClass();
+                    result.each(function(i, e) {
+                        hljs.highlightBlock(e)
+                    });
+                });
+            }
+            ko.applyBindings(new EditorModel());
+        });
+    </script>
+  </head>
+  <body>
+    <textarea id="editor" data-bind="value: pad, valueUpdate: 'afterkeydown'"></textarea>
+    <pre><code id="result"></code></pre>
+  </body>
+</html>

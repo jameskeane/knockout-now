@@ -9,13 +9,8 @@ var nowjs = require('now'),
 app = express()
 app.use("/", express.static(__dirname + '/static'));
 
-var server = app.listen(process.env.PORT || 5000),
-	everyone = nowjs.initialize(server, {
-        'socketio': {
-            'transports': ["xhr-polling"],
-            'polling duration': 10
-        }
-    });
+var server = app.listen(8080),
+	everyone = nowjs.initialize(server);
 
 // Defaults
 everyone.now.users = [];
@@ -51,12 +46,12 @@ everyone.now.sendMessage = function(message) {
 }
 
 // When they disconnect, remove them from the users lists
-nowjs.on('disconnect', function () { 
-	if(this.user.name !== undefined && everyone.now.users.indexOf(this.user.name) != -1 ) {
+nowjs.on('disconnect', function (conn) { 
+	if(conn.user.name !== undefined && everyone.now.users.indexOf(conn.user.name) != -1 ) {
         
         // TODO: This is pretty bad, but now forces us to splice this way. 
         var clone = everyone.now.users.slice(0);
-        clone.splice(everyone.now.users.indexOf(this.user.name), 1);
+        clone.splice(everyone.now.users.indexOf(conn.user.name), 1);
 	    everyone.now.users = clone;
     }
 });
