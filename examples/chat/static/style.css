@@ -69,8 +69,13 @@ a:hover { text-decoration: underline; color: #aaa; }
   /* enough padding to clear the toolbar.. is there a better way to do this? */
   padding-bottom: 5.1em; 
   background: inherit;
-  overflow: hidden;
+  overflow: auto;
   float: left;
+  height: 100%;
+  position: fixed;
+  right: 200px;
+  left: 0;
+  top: 0;
 }
 
 #users { float:right; width: 200px; border-left: 20px #733 solid; height: 100%;}

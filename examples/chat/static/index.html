@@ -57,7 +57,7 @@
         </form>
         <p id="inuse">That user name is in use, please try another one!</p>
       </div>
-      <div id="log" data-bind='foreach: chats'>
+      <div id="log" data-bind='foreach: chats.slice(0).reverse()'>
         <table class="message">
           <tr>
             <td class="date" data-bind="text: time"></td>
